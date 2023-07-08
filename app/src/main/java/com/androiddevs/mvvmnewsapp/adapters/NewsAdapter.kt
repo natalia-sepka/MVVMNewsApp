@@ -9,7 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androiddevs.mvvmnewsapp.R
 import com.androiddevs.mvvmnewsapp.models.Article
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_article_preview.view.*
+import kotlinx.android.synthetic.main.item_article_preview.view.ivArticleImage
+import kotlinx.android.synthetic.main.item_article_preview.view.tvDescription
+import kotlinx.android.synthetic.main.item_article_preview.view.tvPublishedAt
+import kotlinx.android.synthetic.main.item_article_preview.view.tvSource
+import kotlinx.android.synthetic.main.item_article_preview.view.tvTitle
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
@@ -45,7 +49,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
             tvTitle.text = article.title
             tvDescription.text = article.description
             tvPublishedAt.text = article.publishedAt
-            setOnItemClickListener {
+            setOnClickListener {
                 onItemClickListener?.let {
                     it(article)
                 }
